@@ -20,19 +20,19 @@ gem 'collectable'
 ```
 ## Basic usage ##
 
-The short version is "include the module and define some traits." That's also
-the long version, as it were.
+The short version is "include the module and define some characteristics."
+That's also the long version, as it were.
 
 ```ruby
 class HairColor
   include Collectable
 
-  trait :blonde
-  trait :brown
-  trait :red
-  trait :black
-  trait :purple
-  trait :tie_dye
+  characteristic :blonde
+  characteristic :brown
+  characteristic :red
+  characteristic :black
+  characteristic :purple
+  characteristic :tie_dye
 end
 ```
 
@@ -55,6 +55,7 @@ Do you use git-flow? I sure do. Please base anything you do off of
 
 ## History ##
 
+* 0.0.4 - Renamed "traits" to "characteristics"
 * 0.0.3 - .value and .name actually added
 * 0.0.2 - Renamed collected_item#val to collected_item#value
 * 0.0.1 - Public release

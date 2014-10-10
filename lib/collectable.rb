@@ -14,17 +14,17 @@ module Collectable
       :name
     end
 
-    def traits
-      @traits ||= []
+    def characteristics
+      @characteristics ||= []
     end
 
-    def trait(trait_name)
-      traits.push(trait_name.to_s.downcase)
-      traits.uniq!
+    def characteristic(characteristic_name)
+      characteristics.push(characteristic_name.to_s.downcase)
+      characteristics.uniq!
     end
 
     def collected(sort_field = :name)
-      traits.each_with_index.map {|name, index|
+      characteristics.each_with_index.map {|name, index|
         OpenStruct.new(name: name, value: index)
       }.sort {|a,b| 
         a.send(sort_field) <=> b.send(sort_field)
