@@ -55,7 +55,7 @@ Do you use git-flow? I sure do. Please base anything you do off of
 
 ## History ##
 
-* 0.0.1 - Initial release
+* 0.0.1 - Public release
 
 ## License ##
 
