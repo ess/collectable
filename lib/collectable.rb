@@ -17,7 +17,7 @@ module Collectable
 
     def collected(sort_field = :name)
       traits.each_with_index.map {|name, index|
-        OpenStruct.new(name: name, val: index)
+        OpenStruct.new(name: name, value: index)
       }.sort {|a,b| 
         a.send(sort_field) <=> b.send(sort_field)
       }
