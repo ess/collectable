@@ -6,6 +6,14 @@ module Collectable
   end
   
   module ClassMethods
+    def value
+      :value
+    end
+
+    def name
+      :name
+    end
+
     def traits
       @traits ||= []
     end

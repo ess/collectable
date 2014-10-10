@@ -34,6 +34,26 @@ describe Collectable do
     it 'knows how to collect the traits' do
       expect(dummy).to respond_to(:collected)
     end
+
+    it 'knows what method gets a value for a collected trait' do
+      expect(dummy).to respond_to(:value)
+    end
+
+    it 'knows what method gets a name for a collected trait' do
+      expect(dummy).to respond_to(:name)
+    end
+  end
+
+  describe '.value' do
+    it 'is :value' do
+      expect(Dummy.value).to eql(:value)
+    end
+  end
+
+  describe '.name' do
+    it 'is :name' do
+      expect(Dummy.name).to eql(:name)
+    end
   end
 
   describe '.trait' do
