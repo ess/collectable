@@ -55,6 +55,7 @@ Do you use git-flow? I sure do. Please base anything you do off of
 
 ## History ##
 
+* 0.0.4 - Renamed "traits" to "characteristics"
 * 0.0.3 - .value and .name actually added
 * 0.0.2 - Renamed collected_item#val to collected_item#value
 * 0.0.1 - Public release
