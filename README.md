@@ -20,19 +20,19 @@ gem 'collectable'
 ```
 ## Basic usage ##
 
-The short version is "include the module and define some traits." That's also
-the long version, as it were.
+The short version is "include the module and define some characteristics."
+That's also the long version, as it were.
 
 ```ruby
 class HairColor
   include Collectable
 
-  trait :blonde
-  trait :brown
-  trait :red
-  trait :black
-  trait :purple
-  trait :tie_dye
+  characteristic :blonde
+  characteristic :brown
+  characteristic :red
+  characteristic :black
+  characteristic :purple
+  characteristic :tie_dye
 end
 ```
 

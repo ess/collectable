@@ -5,11 +5,11 @@ class Dummy
   include Collectable
 end
 
-class TraitDummy
+class CharacteristicDummy
   include Collectable
 end
 
-class TraitsDummy
+class CharacteristicsDummy
   include Collectable
 end
 
@@ -23,23 +23,23 @@ describe Collectable do
   context 'when included' do
     let(:dummy) {Dummy}
 
-    it 'knows how to define traits' do
-      expect(dummy).to respond_to(:trait)
+    it 'knows how to define characteristics' do
+      expect(dummy).to respond_to(:characteristic)
     end
 
     it 'can report its tratis' do
-      expect(dummy).to respond_to(:traits)
+      expect(dummy).to respond_to(:characteristics)
     end
 
-    it 'knows how to collect the traits' do
+    it 'knows how to collect the characteristics' do
       expect(dummy).to respond_to(:collected)
     end
 
-    it 'knows what method gets a value for a collected trait' do
+    it 'knows what method gets a value for a collected characteristic' do
       expect(dummy).to respond_to(:value)
     end
 
-    it 'knows what method gets a name for a collected trait' do
+    it 'knows what method gets a name for a collected characteristic' do
       expect(dummy).to respond_to(:name)
     end
   end
@@ -56,42 +56,45 @@ describe Collectable do
     end
   end
 
-  describe '.trait' do
-    let(:trait_dummy) {
-      TraitDummy
+  describe '.characteristic' do
+    let(:characteristic_dummy) {
+      CharacteristicDummy
     }
 
     it 'can take a symbol' do
-      expect {trait_dummy.trait :Blah}.not_to raise_error
+      expect {characteristic_dummy.characteristic :Blah}.not_to raise_error
     end
 
     it 'can take a string' do
-      expect {trait_dummy.trait 'Trait 2'}.not_to raise_error
+      expect {characteristic_dummy.characteristic 'characteristic 2'}.
+        not_to raise_error
     end
 
-    it 'adds a trait to the collectable traits' do
-      new_trait = :New_Trait
-      trait_dummy.trait new_trait
-      expect(trait_dummy.traits).to include(new_trait.to_s.downcase)
+    it 'adds a characteristic to the collectable characteristics' do
+      new_characteristic = :New_Characteristic
+      characteristic_dummy.characteristic new_characteristic
+      expect(characteristic_dummy.characteristics).
+        to include(new_characteristic.to_s.downcase)
     end
   end
 
-  describe '.traits' do
-    let(:traits_dummy) {
-      TraitsDummy
+  describe '.characteristics' do
+    let(:characteristics_dummy) {
+      CharacteristicsDummy
     }
 
-    let(:new_trait) {:new_trait}
+    let(:new_characteristic) {:new_characteristic}
 
     it 'is an array' do
-      expect(traits_dummy.traits).to be_a(Array)
+      expect(characteristics_dummy.characteristics).to be_a(Array)
     end
 
-    it 'contains the traits defined by the class' do
-      expect(traits_dummy.traits).to be_empty
+    it 'contains the characteristics defined by the class' do
+      expect(characteristics_dummy.characteristics).to be_empty
 
-      traits_dummy.trait new_trait
-      expect(traits_dummy.traits).to include(new_trait.to_s.downcase)
+      characteristics_dummy.characteristic new_characteristic
+      expect(characteristics_dummy.characteristics).
+        to include(new_characteristic.to_s.downcase)
     end
   end
 
@@ -104,12 +107,12 @@ describe Collectable do
       expect(collected_dummy.collected).to be_a(Array)
     end
 
-    it 'contains OpenStruct representations of the known traits' do
-      collected_dummy.trait :trait_1
-      collected_dummy.trait :trait_2
+    it 'contains OpenStruct representations of the known characteristics' do
+      collected_dummy.characteristic :characteristic_1
+      collected_dummy.characteristic :characteristic_2
 
       expect(collected_dummy.collected.map(&:name)).
-        to eql(collected_dummy.traits.sort)
+        to eql(collected_dummy.characteristics.sort)
     end
   end
 end
