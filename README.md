@@ -47,7 +47,7 @@ Then, to actually use the thing, do something like this in your view:
 ## Contributing ##
 
 Do you use git-flow? I sure do. Please base anything you do off of
-[the develop branch](https://github.com/ess/absolution/tree/develop).
+[the develop branch](https://github.com/ess/collectable/tree/develop).
 
 1. Fork it.
 2. Perform some BDD magic. Seriously. Be testing.
